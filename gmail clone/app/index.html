@@ -28,17 +28,7 @@
    </div>
    <div class="container-fluid hole">
      <div class="row" >
-        <div class="col-md-10 col-xs-10 pull-right">
-          <table class="table table-responsive table-hover messages ">
-            <tbody>
-              <tr  ng-repeat="msg in messages" link-to="google.com">
-                <td>{{msg.from}}</td>
-                <td>{{msg.body}}</td>
-                <td>{{msg.time}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <ng-view></ng-view>
         <div class="menu col-md-2 col-xs-2">
           <div class="menuItem" ng-repeat="item in menuList">
             {{item}}
@@ -55,5 +45,7 @@
    <script type="text/javascript" src="app.js"></script>
    <script type="text/javascript" src="messages/msgCtrl.js"></script>
     <script type="text/javascript" src="components/redirect_to.js"></script>
+        <script type="text/javascript" src="email/email.js"></script>
+    <script type="text/javascript" src="components/email-service.js"></script>
  </body>
 </html>
