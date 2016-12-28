@@ -1,0 +1,29 @@
+@import url("//fonts.googleapis.com/css?family=Roboto");
+
+
+body{
+  font-family: 'Roboto' ;
+}
+
+.hole{
+  margin-top: 60px;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.input-group{
+  margin-top: 10px;
+
+}
+.messages{
+  float:right;
+}
+.menu{
+  float:left;
+  font-size: 20px;
+}
+
+.menu .menuItem:hover {
+  background-color: rgba(119, 136, 138, 0.4);
+  cursor: pointer;
+}

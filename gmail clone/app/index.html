@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" ng-app="gmail" ng-controller="msgCtrl">
+ <head>
+   <meta charset="utf-8">
+   <title>Angular Gmail</title>
+   <link rel='stylesheet' type='text/css' href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' href="app.css">
+ </head>
+ <body>
+   <div class="navbar navbar-fixed-top navbar-default">
+     <div class="container-fluid">
+       <a href="#" class="navbar-brand">
+        <img class=" img img-responsive" src="img/google.png" style="width:80px;height:25px;"/>
+       </a>
+       <form style="width:500px;"  class="container">
+        <div class="input-group input-group-md">
+          <input type="text" ng-model="newTask" class="form-control input"/>
+          <span class=" input-group-btn">
+
+            <span class="btn btn-primary glyphicon glyphicon-search"></span>
+          </span>
+        </div>
+
+        </form>
+
+     </div>
+
+   </div>
+   <div class="container-fluid hole">
+     <div class="row" >
+        <div class="col-md-10 col-xs-10 pull-right">
+          <table class="table table-responsive table-hover messages ">
+            <tbody>
+              <tr  ng-repeat="msg in messages" link-to="google.com">
+                <td>{{msg.from}}</td>
+                <td>{{msg.body}}</td>
+                <td>{{msg.time}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="menu col-md-2 col-xs-2">
+          <div class="menuItem" ng-repeat="item in menuList">
+            {{item}}
+          </div>
+        </div>
+     </div>
+   </div>
+
+
+
+   <script type='text/javascript' src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+   <script type="text/javascript" src="app.js"></script>
+   <script type="text/javascript" src="messages/msgCtrl.js"></script>
+    <script type="text/javascript" src="components/redirect_to.js"></script>
+ </body>
+</html>

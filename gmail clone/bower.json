@@ -1,0 +1,24 @@
+{
+  "name": "gmail-angular-clone",
+  "description": "A gmail clone built using angularjs",
+  "main": "main.js",
+  "authors": [
+    "Michael Nyamande"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gmail",
+    "angularjs"
+  ],
+  "homepage": "",
+  "dependencies": {
+  "angular": "~1.5.0",
+  "angular-route": "~1.5.0",
+  "angular-loader": "~1.5.0",
+  "angular-mocks": "~1.5.0",
+  "html5-boilerplate": "^5.3.0",
+  "bootstrap":"",
+  "angular-animate": "~1.5.0",
+  "angular-bootstrap":""
+}
+}
