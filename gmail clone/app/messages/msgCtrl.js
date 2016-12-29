@@ -1,9 +1,21 @@
 'use strict';
 
-angular.module("gmail.message",[])
-  .controller('msgCtrl',['$scope','emailService', function($scope , emailService){
-    emailService.getEmails().success(function(data){
-      $scope.messages = data ;
+
+  app.controller('msgCtrl',['$scope','emailService','menuList','$rootScope' ,function($scope , emailService,menuList ,$rootScope){
+
+    emailService.getInbox().success(function (data) {
+      $scope.inbox= data ;
+
+
     });
-    $scope.menuList =["Inbox","Starred" ,"Important" ,  "Sent Mail", "Drafts" ,"Circles"];
+
+    $scope.outbox = emailService.getOutbox() ;
+
+    $scope.category = function(){
+      console.log($scope.inbox);
+      return ($rootScope.cat=='Inbox') ? $scope.inbox : $scope.outbox ;
+    };
+
+
+
   }]);

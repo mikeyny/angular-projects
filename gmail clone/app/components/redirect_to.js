@@ -1,5 +1,5 @@
-angular.module('gmail.directives',[])
-  .directive('linkTo', ['$location', function ($location) {
+'use strict';
+  app.directive('linkTo', ['$location', function ($location ) {
   return{
     restrict: 'A',
     link: function (scope, element, attr) {

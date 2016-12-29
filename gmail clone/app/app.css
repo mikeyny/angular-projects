@@ -27,3 +27,47 @@ body{
   background-color: rgba(119, 136, 138, 0.4);
   cursor: pointer;
 }
+
+.add-window {
+  min-width: 400px;
+  min-height: 500px;
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.add-window .header {
+  background-color: #333;
+  color: white;
+}
+
+.add-window div {
+  padding: 5px 5px;
+  margin-right: 20px;
+}
+
+.description {
+  margin: 10px 0;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  vertical-align: top;
+}
+
+.button-bar {
+  text-align: right;
+}
+
+input[type=text] {
+  width: 300px;
+}
+
+textarea {
+  width: 300px;
+  height: 300px;
+}

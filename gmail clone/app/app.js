@@ -1,19 +1,21 @@
 'use strict';
 
-angular.module("gmail",['ngRoute','gmail.message','gmail.email-details','gmail.directives','gmail.email-service'])
-  .config(['$routeProvider', function($routeProvider){
+var app = angular.module("gmail",['ngRoute']);
+  app.config(['$routeProvider', function($routeProvider){
   $routeProvider
     .when("/",{
       templateUrl: "messages/messages.html",
       controller: "msgCtrl"
     })
-    .when("/email/:id",{
+    .when("/Inbox/:id",{
       templateUrl: "email/email.html",
-      controller: "emailCtrl"
+      controller: "inboxCtrl"
     })
-    .when("/compose",{
-      templateUrl: "catalog/catalog.html",
-      controller: "genreCtrl"
+    .when("/Drafts/:id",{
+      templateUrl: "email/email.html",
+      controller: "outboxCtrl"
     })
     .otherwise({redirectTo:"/"});
 }]);
+
+app.value('menuList',["Inbox","Starred" ,"Important" ,  "Sent Mail", "Drafts" ,"Circles"]);

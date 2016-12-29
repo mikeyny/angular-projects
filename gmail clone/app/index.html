@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="gmail" ng-controller="msgCtrl">
+<html lang="en" ng-app="gmail" ng-controller="formCtrl">
  <head>
    <meta charset="utf-8">
    <title>Angular Gmail</title>
@@ -30,12 +30,36 @@
      <div class="row" >
         <ng-view></ng-view>
         <div class="menu col-md-2 col-xs-2">
-          <div class="menuItem" ng-repeat="item in menuList">
+            <div class="btn btn-danger" ng-click="startAdd()">Compose</div>
+
+          <div class="menuItem" ng-repeat="item in menuList" link-to="#/" ng-click="openBox({item})">
             {{item}}
           </div>
         </div>
+
      </div>
    </div>
+   <form ng-show="adding" class="add-window" ng-submit="addItem()">
+    <div class='header'>Compose Email</div>
+    <div class='inner'>
+      <div>
+        <label>To: </label>
+        <input type="text" ng-model="newEmail.from" required>
+      </div>
+      <div>
+        <label>Header: </label>
+        <input type="text" ng-model="newEmail.time" required>
+      </div>
+      <div>
+        <label>Body: </label>
+        <textarea ng-model="newEmail.body"></textarea>
+      </div>
+      <div class='button-bar '>
+        <button type="submit button" class=" btn btn-primary" value="Add">Send</button>
+        <button type="button" class= "btn btn-default" ng-click="cancelAdd()">Cancel</button>
+      </div>
+    </div>
+  </form>
 
 
 
@@ -43,9 +67,11 @@
     <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
    <script type="text/javascript" src="app.js"></script>
+   <script type="text/javascript" src="components/formCtrl.js"></script>
    <script type="text/javascript" src="messages/msgCtrl.js"></script>
     <script type="text/javascript" src="components/redirect_to.js"></script>
         <script type="text/javascript" src="email/email.js"></script>
     <script type="text/javascript" src="components/email-service.js"></script>
+
  </body>
 </html>
