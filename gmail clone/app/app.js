@@ -7,14 +7,11 @@ var app = angular.module("gmail",['ngRoute']);
       templateUrl: "messages/messages.html",
       controller: "msgCtrl"
     })
-    .when("/Inbox/:id",{
+    .when("/:category/:id",{
       templateUrl: "email/email.html",
-      controller: "inboxCtrl"
+      controller: "detailsCtrl"
     })
-    .when("/Drafts/:id",{
-      templateUrl: "email/email.html",
-      controller: "outboxCtrl"
-    })
+
     .otherwise({redirectTo:"/"});
 }]);
 

@@ -1,7 +1,18 @@
 <div class="col-md-10 col-xs-10 pull-right">
     <div class="well">
       <div class="list-group">
-        <div class="list-group-item">From :{{email.from}}</div>
+        <div class="list-group-item">
+          <div ng-show="show">From :{{email.from.name}}<br/>
+                    &emsp; &emsp;  {{ email.from.email}}<br/>
+                    &emsp; &emsp;  {{email.time | date : "yyyy-MM-dd"}}<br/>
+                    &emsp; &emsp;  {{email.time | date : "HH:mm"}}
+          </div>
+          <div ng-hide="show">To :{{email.to.name}}<br/>
+                    &emsp; &emsp;  {{ email.to.email}}<br/>
+                    &emsp; &emsp;  {{email.time | date : "yyyy-MM-dd"}} <br/>
+                    &emsp; &emsp;  {{email.time | date : "HH:mm"}}
+          </div>
+        </div>
         <div class="list-group-item">{{email.body}}</div>
       </div>
     </div>

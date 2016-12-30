@@ -1,15 +1,10 @@
 'use strict';
 
 
-  app.controller('inboxCtrl',['$scope','$filter' ,'$routeParams','emailService',function($scope , $filter , $routeParams , emailService){
 
-        emailService.getInbox().success(function (data) {
-          $scope.email= $filter('filter')(data , {id: $routeParams.id},true)[0] ;
-        });
+  app.controller('detailsCtrl',['$scope','$filter' ,'$routeParams','emailService','$rootScope' ,function($scope , $filter , $routeParams , emailService , $rootScope){
 
-  }]);
-  app.controller('outboxCtrl',['$scope','$filter' ,'$routeParams','emailService',function($scope , $filter , $routeParams , emailService){
-
-        $scope.email = $filter('filter')(emailService.getOutbox() , {id: $routeParams.id},true)[0]
-
+        $scope.email = $filter('filter')(emailService.getMail() , {id: $routeParams.id},true)[0];
+        $scope.show = ($rootScope.category == "Inbox") ? true : false;
+        console.log($scope.show);
   }]);

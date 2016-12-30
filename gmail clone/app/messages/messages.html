@@ -1,10 +1,10 @@
 <div class="col-md-10 col-xs-10 pull-right">
   <table class="table table-responsive table-hover messages ">
     <tbody>
-      <tr  ng-repeat="msg in category()" link-to="/{{cat}}/{{msg.id}}">
-        <td>{{msg.from}}</td>
-        <td>{{msg.body | limitTo :80}}</td>
-        <td>{{msg.time}}</td>
+      <tr  ng-repeat="msg in mail |filter :category : msg.category" link-to="/{{category}}/{{msg.id}}">
+        <td>{{msg.from.name}}</td>
+        <td>{{msg.body | limitTo :80}}  </td>
+        <td>{{msg.time | date:"HH:mm"}}</td>
       </tr>
     </tbody>
   </table>

@@ -2,25 +2,22 @@
     app.factory('emailService',['$http', function($http){
       var emailApi ={};
 
-      var outbox = [{
-        "id":"102",
-        "from":"mikey",
-        "body":"Hello from the other side",
-          "time": "1405"
-      }] ;
-
+      var mail = [];
+      $http.get('json/messages.json').success(function(data){
+          mail = data ;
+        });
       emailApi.sendMail = function(msg){
-        outbox.push(msg);
+        mail.push(msg);
       };
 
-      emailApi.getOutbox = function(){
-        return outbox;
+      emailApi.getMail = function(){
+        return mail;
       };
 
-      emailApi.getInbox = function(){
-        return $http.get("json/messages.json");
 
-      };
+
+
+
 
       return emailApi ;
     }]);
